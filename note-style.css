@@ -1,0 +1,128 @@
+/* Basic reset for body and HTML */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    background: linear-gradient(45deg, #ff99cc, #66ccff);
+    background-size: 400% 400%;
+    animation: gradientBackground 10s ease infinite;
+}
+
+/* Animation for the background gradient */
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.note-container {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    opacity: 0;
+    animation: fadeIn 2s forwards, scaleIn 1.5s ease-out forwards;
+}
+
+/* Fade-in effect for the note container */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Scale-up effect to gently scale the note container */
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Typing effect for the note text */
+.typed-text {
+    display: inline-block;
+    font-size: 1.2em;
+    color: #333;
+    opacity: 0;
+    animation: typing 4s steps(50) 1s forwards, fadeInText 1s 5s forwards;
+}
+
+/* Typing animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Fade-in text effect */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Extra style for the title */
+.note-title {
+    font-size: 2em;
+    color: #FF6347; /* Tomato color */
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInText 2s 1s forwards;
+}
+
+/* Style for the "Back to Greeting Card" button */
+.back-btn {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #FF6347; /* Tomato color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInButton 1s 6s forwards; /* Delay the button fade-in */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Fade-in effect for the button */
+@keyframes fadeInButton {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Button hover animation */
+.back-btn:hover {
+    background-color: #FF4500; /* Darker Tomato color */
+    transform: scale(1.1);
+}
